@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/helpers/custom_route.dart';
 import 'package:shop_app/providers/auth.dart';
 import 'package:shop_app/screens/order_screen.dart';
 import 'package:shop_app/screens/user_products_screen.dart';
@@ -27,7 +28,12 @@ class AppBarItem extends StatelessWidget {
             leading: Icon(Icons.shop),
             title: Text('Orders'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, OrderScreen.routeName);
+              Navigator.pushReplacement(
+                context,
+                CustomRoute(
+                  builder: (ctx) => OrderScreen(),
+                ),
+              );
             },
           ),
           Divider(),
